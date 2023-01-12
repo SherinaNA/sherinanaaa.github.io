@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+	<title>Payment</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Sherina's Eau De Parfume, Sherina Parfume">
+	<meta name="keywords" content="Parfume, Minyak Wangi, Body Mist, Cologne">
+	<meta name="author" content="Sherina NA">
+	<link href="../css/csstugasuas.css" rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Great%20Vibes' rel='stylesheet'>
+	<link rel="icon" type="image/x-icon" href="../Images/favicon.ico">
+	</head>
+	<body>
+		<header>
+			<h1>Sherina's<br>Eau De Parfume</h1>
+		</header>
+		<nav class="topnav">
+			<a href="../index.html">Home</a>
+			<a href="AboutUs.html">About Us</a>
+			<a href="Collection.html">Collection</a>
+			<a href="Marketplace.html">Marketplace</a>
+			<a href="Contact.html">Contact</a>
+		</nav>
+		<h2>Payment</h2>
+		<table class="table">
+			<tr>
+				<th rowspan="3"><img src="../Images/Pink.png" alt="Pink Musk" width="100"></th>
+			</tr>
+			<tr>
+				<td width="20%">Harga</td>
+				<td width="50%">Rp 28.900,-</td>
+			</tr>
+			<tr>
+				<td>Jumlah</td>
+				<td><input type="text" id="jmlh" onkeyup="totalHarga()" required></td>
+			</tr>
+			<tr>
+				<td align="center"><b>Pink Musk</b></td>
+				<td>Total</td>
+				<td><input type="text" id="total" placeholder="Rp -" disabled=""></td>
+			</tr>
+		</table>
+        <h3>Personal Information</h3>
+		<form name="fpayment" method="post" action="proses.php" align="center">
+			<div>
+				<div>
+					<label>First Name</label>
+				</div>
+				<div>
+					<input type="text" name="fnamadpn" placeholder="Sherina" required>
+				</div>
+				<div>
+					<label>Last Name</label>
+				</div>
+				<div>
+					<input  type="text" name="fnamablk" placeholder="Anggraeni" required>
+				</div>
+				<div>
+					<label>Phone Number</label>
+				</div>
+				<div>
+					<input type="text" name="fnomor" placeholder="+62 851 2345 6789" required>
+				</div>
+                <div>
+					<label>Address</label>
+				</div>
+				<div>
+					<input  type="text" name="falamat" placeholder="Jalan Nakula, No. 15" required>
+				</div>
+				<h3>Card Information</h3>
+                <div class="cardIcons">
+                    <img src="../Images/visa.png" width="40" alt="" class="cardIcon">
+                    <img src="../Images/master.png" alt="" width="40" class="cardIcon">
+                </div>
+                <div>
+                    <input type="password" class="payInput" placeholder="Card Number" required>
+                </div>
+                <div class="cardInfo">
+                    <input type="text" placeholder="mm" class="payInput sm" required>
+                    <input type="text" placeholder="yyyy" class="payInput sm" required>
+                    <input type="text" placeholder="cvv" class="payInput sm" required>
+                </div>
+                <div>
+				    <input align="center" type="submit" name="fsubmit" value="Checkout">
+                </div>
+			</div>
+		</form>
+			
+		<hr>
+		
+		<footer>
+			Sherina's Eau De Parfume &copy; 2023
+		</footer>
+		
+		<script type="text/javascript">
+			function totalHarga()
+			{
+				var nilai_jmlh = document.getElementById('jmlh').value;
+				if (nilai_jmlh == "")
+				{
+					document.getElementById('total').value ="Rp -";
+				}
+				else
+				{
+					var total = nilai_jmlh * 28900;
+					document.getElementById('total').value ="Rp " + total;
+				}
+			}
+        </script>
+	</body>
+</html>
